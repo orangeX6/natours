@@ -25,7 +25,6 @@ if (mapBox) {
 }
 
 window.onload = function () {
-  // console.log(tourId);
   if (loginForm)
     loginForm.addEventListener('submit', (e) => {
       e.preventDefault();

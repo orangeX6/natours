@@ -8,6 +8,7 @@ const xss = require('xss-clean');
 const hpp = require('hpp');
 const cookieParser = require('cookie-parser');
 const csp = require('express-csp');
+const compression = require('compression');
 
 const AppError = require('./utils/appError');
 const globalErrorHandler = require('./controllers/errorController');
@@ -97,6 +98,7 @@ csp.extend(app, {
     },
   },
 });
+
 // app.use(
 //   helmet({
 //     contentSecurityPolicy: {
@@ -145,6 +147,7 @@ csp.extend(app, {
 //     },
 //   })
 // );
+
 //  Development logging
 if (process.env.node_ENV === 'development') {
   app.use(morgan('dev'));
@@ -184,6 +187,8 @@ app.use(
     ],
   })
 );
+
+app.use(compression());
 
 //  Test Middleware
 app.use((req, res, next) => {
