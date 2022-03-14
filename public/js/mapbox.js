@@ -7,9 +7,6 @@ export const displayMap = (locations) => {
     container: 'map',
     style: 'mapbox://styles/pranav006/cl09c7t5r003j14mgfyngs9dj',
     scrollZoom: false, // disable zoom but can still pan
-    // center: [-118.284049, 34.025851], // longitude first
-    // zoom: 6,
-    // interactive:false
   });
 
   const bounds = new mapboxgl.LngLatBounds();
